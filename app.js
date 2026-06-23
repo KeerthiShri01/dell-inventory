@@ -17,3 +17,16 @@ function displayInventory() {
 }
 
 displayInventory();
+function addProduct() {
+  var input = document.getElementById("product-input");
+  var name = input.value.trim();
+
+  if (name === "") {
+    alert("Please enter a product name!");
+    return;
+  }
+
+  inventory.push({ name: name, inStock: true });
+  input.value = "";
+  displayInventory();
+}
