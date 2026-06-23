@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dell Inventory Manager</title>
+</head>
+<body>
+
+  <h1>Dell Inventory Manager</h1>
+
+  <!-- Add a product -->
+  <input type="text" id="product-input" placeholder="Enter product name" />
+  <button onclick="addProduct()">Add</button>
+
+  <!-- Check stock -->
+  <input type="text" id="check-input" placeholder="Check product name" />
+  <button onclick="checkAvailability()">Check</button>
+
+  <!-- Product list display -->
+  <ul id="product-list"></ul>
+
+  <!-- Stock check result -->
+  <p id="check-result"></p>
+
+  <script src="app.js"></script>
+</body>
+</html>
