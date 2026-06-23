@@ -42,3 +42,33 @@ function removeProduct(index) {
   inventory.splice(index, 1);
   displayInventory();
 }
+function checkAvailability() {
+  var input = document.getElementById("check-input");
+  var name = input.value.trim();
+  var result = document.getElementById("check-result");
+
+  if (name === "") {
+    alert("Please enter a product name!");
+    return;
+  }
+
+  var found = false;
+
+  for (var i = 0; i < inventory.length; i++) {
+    if (inventory[i].name.toLowerCase() === name.toLowerCase()) {
+      found = true;
+      if (inventory[i].inStock) {
+        result.textContent = "✅ " + inventory[i].name + " is In Stock!";
+      } else {
+        result.textContent = "❌ " + inventory[i].name + " is Out of Stock!";
+      }
+      break;
+    }
+  }
+
+  if (!found) {
+    result.textContent = "⚠️ " + name + " not found in inventory!";
+  }
+
+  input.value = "";
+}
