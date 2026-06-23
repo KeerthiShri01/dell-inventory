@@ -12,6 +12,14 @@ function displayInventory() {
     var item = inventory[i];
     var li = document.createElement("li");
     li.textContent = item.name + " - " + (item.inStock ? "In Stock" : "Out of Stock");
+
+    var btn = document.createElement("button");
+    btn.textContent = "Remove";
+    btn.onclick = function(index) {
+      return function() { removeProduct(index); };
+    }(i);
+
+    li.appendChild(btn);
     list.appendChild(li);
   }
 }
@@ -28,5 +36,9 @@ function addProduct() {
 
   inventory.push({ name: name, inStock: true });
   input.value = "";
+  displayInventory();
+}
+function removeProduct(index) {
+  inventory.splice(index, 1);
   displayInventory();
 }
