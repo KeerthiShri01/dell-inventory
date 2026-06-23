@@ -4,6 +4,7 @@ var inventory = [
   { name: "Dell Alienware m16", inStock: false },
   { name: "Dell Latitude 5540", inStock: true }
 ];
+
 function displayInventory() {
   var list = document.getElementById("product-list");
   list.innerHTML = "";
@@ -24,7 +25,6 @@ function displayInventory() {
   }
 }
 
-displayInventory();
 function addProduct() {
   var input = document.getElementById("product-input");
   var name = input.value.trim();
@@ -38,10 +38,12 @@ function addProduct() {
   input.value = "";
   displayInventory();
 }
+
 function removeProduct(index) {
   inventory.splice(index, 1);
   displayInventory();
 }
+
 function checkAvailability() {
   var input = document.getElementById("check-input");
   var name = input.value.trim();
@@ -72,3 +74,5 @@ function checkAvailability() {
 
   input.value = "";
 }
+
+displayInventory();

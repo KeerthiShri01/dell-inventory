@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dell Inventory Manager</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <h1>Dell Inventory Manager</h1>
 
-  <!-- Add a product -->
-  <input type="text" id="product-input" placeholder="Enter product name" />
-  <button onclick="addProduct()">Add</button>
+  <div class="section">
+    <h2>Add Product</h2>
+    <input type="text" id="product-input" placeholder="Enter product name" />
+    <button onclick="addProduct()">Add</button>
+  </div>
 
-  <!-- Check stock -->
-  <input type="text" id="check-input" placeholder="Check product name" />
-  <button onclick="checkAvailability()">Check</button>
+  <div class="section">
+    <h2>Check Availability</h2>
+    <input type="text" id="check-input" placeholder="Check product name" />
+    <button onclick="checkAvailability()">Check</button>
+    <p id="check-result"></p>
+  </div>
 
-  <!-- Product list display -->
-  <ul id="product-list"></ul>
-
-  <!-- Stock check result -->
-  <p id="check-result"></p>
+  <div class="section">
+    <h2>Inventory List</h2>
+    <ul id="product-list"></ul>
+  </div>
 
   <script src="app.js"></script>
 </body>
